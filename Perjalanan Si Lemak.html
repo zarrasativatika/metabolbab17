@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perjalanan Si Lemak</title>
+<style>
+:root{--bg:#faf7f2;--card:#fff;--ink:#23201c;--mut:#6b655c;--line:#e6dfd3;--acc:#d9822b;--acc2:#2b8a7e;--soft:#fdf0e0;--organ:#f6d9c4;--organ-s:#d9a47e;--lymph:#7cc9a8;--blood:#e0675a;--tis:#cfe3f3;--tis-s:#7fa9cc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17150f;--card:#221f18;--ink:#f2ede3;--mut:#a39b8c;--line:#3a3529;--acc:#f0a050;--acc2:#4fc0b0;--soft:#33291a;--organ:#4a3524;--organ-s:#9a7350;--lymph:#3f8f72;--blood:#c4574b;--tis:#27384a;--tis-s:#5f87ad;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--card:#221f18;--ink:#f2ede3;--mut:#a39b8c;--line:#3a3529;--acc:#f0a050;--acc2:#4fc0b0;--soft:#33291a;--organ:#4a3524;--organ-s:#9a7350;--lymph:#3f8f72;--blood:#c4574b;--tis:#27384a;--tis-s:#5f87ad;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+main{max-width:900px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:1.45rem;margin:0}
+.sub{color:var(--mut);margin:2px 0 14px}
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.grid{grid-template-columns:340px 1fr;align-items:start}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+svg{display:block;width:100%;max-height:62vh;margin:0 auto}
+.n .shape{fill:var(--organ);stroke:var(--organ-s);stroke-width:2;transition:.4s}
+.n text{fill:var(--ink);font-size:11px;font-weight:600;text-anchor:middle;pointer-events:none}
+.n.t .shape{fill:var(--tis);stroke:var(--tis-s)}
+.n.on .shape{stroke:var(--acc);stroke-width:4;filter:drop-shadow(0 0 6px var(--acc))}
+.n{opacity:.55;transition:.4s}.n.on{opacity:1}
+.pipe{fill:none;stroke:var(--organ-s);stroke-width:3;stroke-dasharray:4 4;opacity:.7}
+.lym{fill:none;stroke:var(--lymph);stroke-width:8;stroke-linecap:round}
+.bld{fill:none;stroke:var(--blood);stroke-width:10;stroke-linecap:round}
+.coil{fill:none;stroke:var(--organ-s);stroke-width:2;opacity:.6}
+#hero{transition:transform .9s cubic-bezier(.5,0,.2,1)}
+#hero rect{fill:var(--acc);stroke:#fff;stroke-width:2;transition:fill .4s}
+#hero text.l{fill:#fff;font-size:11px;font-weight:800;text-anchor:middle}
+#hero text.c{font-size:20px;text-anchor:middle}
+.story h2{margin:0 0 6px;font-size:1.2rem}
+.ch{display:inline-block;background:var(--soft);color:var(--acc);font-weight:700;font-size:.8rem;padding:3px 10px;border-radius:99px;margin-bottom:6px}
+.story p{margin:8px 0}
+.key{border-left:4px solid var(--acc2);padding:8px 12px;margin:12px 0;background:var(--bg);border-radius:0 8px 8px 0;font-weight:700;color:var(--acc2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.two div{background:var(--soft);border-radius:10px;padding:10px;text-align:center;font-weight:700}
+.dots{display:flex;gap:6px;justify-content:center;margin:12px 0 4px}
+.dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--card);padding:0;cursor:pointer}
+.dots button.on{background:var(--acc);border-color:var(--acc);transform:scale(1.3)}
+.dots button.d{border-color:var(--acc2)}
+.ctrl{display:flex;justify-content:space-between;gap:8px;margin-top:10px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 16px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:disabled{opacity:.4;cursor:default}
+</style>
+</head>
+<body>
+<main>
+<h1>🥑 Perjalanan Si Lemak</h1>
+<p class="sub">Ikuti “Lemo”, sebutir triasilgliserol (TAG), dari piring makanmu sampai jadi energi.</p>
+<div class="grid">
+<div class="panel">
+<svg viewBox="0 0 360 490" role="img" aria-label="Skema sistem pencernaan lemak">
+<path class="pipe" d="M180 22V42M180 100V140M262 118L240 150"/>
+<path class="lym" d="M180 272V330"/>
+<path class="bld" d="M50 365H310"/>
+<path class="pipe" d="M180 372V412"/>
+<g class="n" id="n-mulut"><ellipse class="shape" cx="180" cy="14" rx="30" ry="12"/><text x="180" y="18">Mulut</text></g>
+<g class="n" id="n-lambung"><ellipse class="shape" cx="180" cy="72" rx="52" ry="30"/><text x="180" y="76">Lambung</text></g>
+<g class="n" id="n-empedu"><ellipse class="shape" cx="290" cy="108" rx="52" ry="22"/><text x="290" y="112">Kandung empedu</text></g>
+<g class="n" id="n-usus"><rect class="shape" x="95" y="140" width="170" height="132" rx="34"/>
+<path class="coil" d="M125 175c30-20 40 20 70 0s40 20 40 0M125 205c30-20 40 20 70 0s40 20 40 0M125 235c30-20 40 20 70 0s40 20 40 0"/>
+<text x="180" y="158">Usus halus (mukosa)</text></g>
+<g class="n" id="n-limfa"><text x="228" y="304" style="text-anchor:start">Pembuluh limfa</text></g>
+<g class="n" id="n-darah"><text x="180" y="392">Aliran darah</text></g>
+<g class="n t" id="n-jar"><rect class="shape" x="90" y="414" width="180" height="62" rx="18"/><text x="180" y="462">Jaringan: adiposa &amp; otot</text></g>
+<g id="hero"><text class="c" id="hc" y="-16"></text><rect id="hr" rx="12" height="24" y="-12"/><text class="l" id="hl" y="4"></text></g>
+</svg>
+</div>
+<div class="panel story">
+<div id="body"></div>
+<div class="dots" id="dots"></div>
+<div class="ctrl"><button class="btn" id="prev">← Kembali</button><button class="btn p" id="next">Lanjut →</button></div>
+</div>
+</div>
+</main>
+<script>
+var C=[
+{t:"Lemo masuk ke tubuh",p:[180,76],n:["mulut","lambung"],l:"TAG",c:"🥑",s:"Kamu makan alpukat. Lemo, sebutir <b>triasilgliserol (TAG)</b>, ikut tertelan dan meluncur lewat saluran pencernaan menuju usus halus. Masalahnya, Lemo itu lemak, jadi dia menggumpal besar dan tidak mau berbaur dengan air.",k:"Lemak = susah bercampur air"},
+{t:"Garam empedu datang menolong",p:[180,185],n:["empedu","usus"],l:"TAG kecil",c:"🧼",s:"Kandung empedu mengirim <b>garam empedu</b>. Mereka bekerja seperti sabun pada piring berminyak: gumpalan Lemo dipecah jadi tetesan-tetesan kecil. Proses ini disebut <b>emulsifikasi</b>.",k:"Garam empedu → memperluas permukaan untuk aksi enzim"},
+{t:"Lipase menggunting Lemo",p:[180,208],n:["usus"],l:"AL + MAG",c:"✂️",s:"Sekarang permukaan Lemo luas, sehingga enzim <b>lipase</b> mudah menempel. Lipase menghidrolisis TAG dan Lemo terbelah.",k:"TAG → asam lemak bebas (AL) + monoasilgliserol (MAG)"},
+{t:"Diserap dan dirakit ulang",p:[180,258],n:["usus"],l:"TAG",c:"🔄",s:"Pecahan Lemo diserap oleh <b>mukosa usus halus</b>. Di dalam sel mukosa, mereka bersatu kembali dan Lemo jadi <b>triasilgliserol</b> lagi.",k:"Diserap mukosa → disusun ulang jadi TAG"},
+{t:"Dibungkus jadi chylomicron",p:[180,262],n:["usus"],l:"Chylomicron",c:"📦",s:"Agar bisa dikirim lewat cairan tubuh, Lemo dibungkus bersama <b>protein dan kolesterol</b> menjadi paket pengangkut bernama <b>chylomicron</b>.",k:"Chylomicron = TAG + protein + kolesterol"},
+{t:"Naik angkot limfa, lalu masuk darah",p:[180,365],n:["limfa","darah"],l:"Chylomicron",c:"🚚",s:"Paket tidak langsung masuk darah. Chylomicron keluar dari mukosa lewat <b>sistem limfatik</b>, baru kemudian bergabung ke <b>aliran darah</b> dan berkeliling ke seluruh tubuh.",k:"Mukosa → limfatik → darah"},
+{t:"Tiba di jaringan: dibongkar",p:[180,444],n:["jar"],l:"AL + Gliserol",c:"🔨",s:"Di jaringan, chylomicron membawa <b>Apo C-II</b> di permukaannya. Apo C-II mengaktifkan enzim <b>lipoprotein lipase (LPL)</b> yang lalu menghidrolisis TAG di dalamnya.",k:"LPL + Apo C-II: TAG → asam lemak + gliserol"},
+{t:"Dua pilihan akhir",p:[180,444],n:["jar"],l:"Asam lemak",c:"🔋",s:"Asam lemak bebas hasil pembongkaran punya dua nasib, tergantung kebutuhan tubuh:",k:"Simpan atau pakai",x:'<div class="two"><div>🏦 Disimpan<br><small>di jaringan adiposa</small></div><div>⚡ Dipakai<br><small>dioksidasi → CO₂ + ATP</small></div></div><p style="font-size:.85rem;color:var(--mut)">Tamat. Ulangi dari awal untuk menghafal urutannya!</p>'}
+];
+var i=0,$=function(x){return document.getElementById(x)};
+function go(n){
+ i=n;var c=C[n];
+ Array.prototype.forEach.call(document.querySelectorAll(".n"),function(e){e.classList.remove("on")});
+ c.n.forEach(function(k){$("n-"+k).classList.add("on")});
+ var w=c.l.length*7+22;
+ $("hr").setAttribute("width",w);$("hr").setAttribute("x",-w/2);
+ $("hl").textContent=c.l;$("hc").textContent=c.c;
+ $("hero").style.transform="translate("+c.p[0]+"px,"+c.p[1]+"px)";
+ $("body").innerHTML='<span class="ch">Bab '+(n+1)+' dari '+C.length+'</span><h2>'+c.t+'</h2><p>'+c.s+'</p><div class="key">'+c.k+'</div>'+(c.x||"");
+ $("dots").innerHTML=C.map(function(_,k){return '<button data-n="'+k+'" aria-label="Bab '+(k+1)+'" class="'+(k===n?"on":k<n?"d":"")+'"></button>'}).join("");
+ $("prev").disabled=n===0;
+ $("next").textContent=n===C.length-1?"↺ Ulangi":"Lanjut →";
+}
+$("next").onclick=function(){go(i===C.length-1?0:i+1)};
+$("prev").onclick=function(){if(i>0)go(i-1)};
+$("dots").onclick=function(e){var n=e.target.getAttribute("data-n");if(n!==null)go(+n)};
+document.onkeydown=function(e){if(e.key==="ArrowRight")$("next").click();if(e.key==="ArrowLeft")$("prev").click()};
+$("hero").style.transform="translate(180px,76px)";
+setTimeout(function(){go(0)},50);
+</script>
+</body>
+</html>
